@@ -1,4 +1,6 @@
 
+import java.lang.Math;
+
 public class Computer {
 
 	private Processor theProcessor;
@@ -18,21 +20,58 @@ public Computer() {
  theProcessor = new Processor();
  theHardDisk = new HardDisk();
  theDisplay = new Display();
-
  
+ theProcessor.setCost((int) Math.floor(Math.random() * 101));
+ theHardDisk.setCost((int) Math.floor(Math.random() * 101));
+ theDisplay.setCost((int) Math.floor(Math.random() * 101));
+ 
+// total=getPrice();
+ 
+ 
+}
+
+public void setTotal (int t) {
+	total=t;
+	
 }
 
 public static void main (String args[]){
 	
 	
 	Computer test= new Computer();
-	test.theDisplay.setBrand("Sony");
-	test.printComputerSummary();
+	//test.setTotal(216);
+	Computer test1= new Computer();
+	//test1.setTotal(53);
+	Computer test2= new Computer();
+	//test2.setTotal(248);
+	Computer test3= new Computer();
+	//test3.setTotal(166);
+	
+
+	ComputerStore storeTest = new ComputerStore();
+	
+	storeTest.addComputer(test);
+	storeTest.addComputer(test1);
+	storeTest.addComputer(test2);
+	storeTest.addComputer(test3);
+	
+	storeTest.printAllComputers();
+	storeTest.printTotalValue();
+	System.out.println("\nV1 Most expensive is "+storeTest.findMostExpensiveComputerV1().getPrice());
+	System.out.println("V2 Most expensive is "+storeTest.findMostExpensiveComputerV2().getPrice());
+	System.out.println("V3 Most expensive is "+storeTest.findMostExpensiveComputerV3().getPrice());
+	System.out.println("V4 Most expensive is "+storeTest.findMostExpensiveComputerV4().getPrice());
+	
 	
 	
 }
 
 
+public int getPrice () {
+	total= theProcessor.getCost() +  theHardDisk.getCost() +  theDisplay.getCost();
+	return total;
+	
+}
 
 
 //print a summary of the Computer components and calculate a total cost
@@ -44,8 +83,8 @@ public void printComputerSummary() {
  theHardDisk.printInfo();
  theDisplay.printInfo();
 
- total= theProcessor.getCost() +  theHardDisk.getCost() +  theDisplay.getCost();
  
- System.out.println("The total cost of this Computer is : " + total);
+ 
+ System.out.println("The total cost of this Computer is : " + this.getPrice()+"\n");
 }
 }

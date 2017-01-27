@@ -10,6 +10,14 @@ public class HardDisk {
 
 	
 
+public int getSize() {
+		return size;
+	}
+
+	public void setSize(int size) {
+		this.size = size;
+	}
+
 public HardDisk (){
 	
 
@@ -17,7 +25,7 @@ public HardDisk (){
 
 	public void printInfo() {
 		
-System.out.println(" The Hard Disk is a "+ brand + " "+ model + "/n Item number: "+ itmNum+"/n Cost: "+cost);
+System.out.println(" The Hard Disk is a "+ brand + " "+ model + "   Item number: "+ itmNum+"   Cost: "+cost);
 				
 	}
 

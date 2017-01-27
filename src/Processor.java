@@ -9,6 +9,14 @@ public class Processor {
 	private int clock;
 	
 	
+	public int getClock() {
+		return clock;
+	}
+
+	public void setClock(int clock) {
+		this.clock = clock;
+	}
+
 	public Processor ()
 
 	{
@@ -18,7 +26,7 @@ public class Processor {
 
 	public void printInfo() {
 		
-   System.out.println(" The processor is a "+ brand + " "+ model + "/n Item number: "+ itmNum+"/n Cost: "+cost);
+   System.out.println(" The processor is a "+ brand + " "+ model + "   Item number: "+ itmNum+"   Cost: "+cost);
 				
 	}
 	

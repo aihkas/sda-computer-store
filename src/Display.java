@@ -13,6 +13,14 @@ public class Display {
 	
 	
 
+public int getSize() {
+		return Size;
+	}
+
+	public void setSize(int size) {
+		Size = size;
+	}
+
 public Display (){
 	
 
@@ -20,7 +28,7 @@ public Display (){
 
 	public void printInfo() {
 		
-   System.out.println(" The display is a "+ brand + " "+ model + "/n Item number: "+ itmNum+"/n Cost: "+cost);
+   System.out.println(" The display is a "+ brand + " "+ model + "   Item number: "+ itmNum+"   Cost: "+cost);
 		
 	}
 	
