@@ -1,51 +1,62 @@
 
-import java.lang.Math;
+import java.lang.Math;      //needed for generating random integers while testing
+
+
+/**
+* Computer class is a simple representation of the components included in a computer.
+* it stores the the total price of the device.
+* It also has the main method that is used to test the whole structure.
+* @author  Aiham Alkaseer
+* @version 1.0
+* @since   2017-01-27 
+*/
+
+
+
+
 
 public class Computer {
 
-	private Processor theProcessor;
-	private HardDisk theHardDisk;
-	private Display theDisplay;
-	private int total;
+private Processor theProcessor;
+private HardDisk theHardDisk;
+private Display theDisplay;
+private int total;          //the total price of all components of the computer
 	
 
 
 
-//constructor for Computer
-//takes no parameters
-//it call the constructor of each of the fields
+
+
+/**
+ *constructor for Computer.
+ *It takes no parameters, and it calls the constructor of each of the fields.
+ *for testing purposes it will give a random integer between 1-100 for each one of the components
+ */
+
 public Computer() {
 	
 	
- theProcessor = new Processor();
- theHardDisk = new HardDisk();
- theDisplay = new Display();
+	theProcessor = new Processor();
+    theHardDisk = new HardDisk();
+    theDisplay = new Display();
  
- theProcessor.setCost((int) Math.floor(Math.random() * 101));
- theHardDisk.setCost((int) Math.floor(Math.random() * 101));
- theDisplay.setCost((int) Math.floor(Math.random() * 101));
+    theProcessor.setCost((int) Math.floor(Math.random() * 101));
+    theHardDisk.setCost((int) Math.floor(Math.random() * 101));
+    theDisplay.setCost((int) Math.floor(Math.random() * 101));
  
-// total=getPrice();
+    total=getPrice();
  
- 
-}
 
-public void setTotal (int t) {
-	total=t;
-	
 }
 
 public static void main (String args[]){
 	
 	
 	Computer test= new Computer();
-	//test.setTotal(216);
 	Computer test1= new Computer();
-	//test1.setTotal(53);
 	Computer test2= new Computer();
-	//test2.setTotal(248);
-	Computer test3= new Computer();
-	//test3.setTotal(166);
+	Computer test3= new Computer();   //creating 4 objects to be then added for testing ComputerStore methods
+	
 	
 
 	ComputerStore storeTest = new ComputerStore();
@@ -67,6 +78,12 @@ public static void main (String args[]){
 }
 
 
+
+/**
+ * This method is used to get the total price of the computer
+ * by calling the cost getters for each component
+ * @return int This returns the total.
+ */
 public int getPrice () {
 	total= theProcessor.getCost() +  theHardDisk.getCost() +  theDisplay.getCost();
 	return total;
@@ -74,17 +91,26 @@ public int getPrice () {
 }
 
 
-//print a summary of the Computer components and calculate a total cost
-//you will need method calls to get info about the other components
-//e.g. theProcessor.getCost()
+/**
+ * print a summary of the Computer components and calculate a total cost.
+ * it calls the local print methods for each object of the components
+ * 
+ */
+
+
 public void printComputerSummary() {
 	System.out.println("This Computer has the following components : ");
- theProcessor.printInfo();
- theHardDisk.printInfo();
- theDisplay.printInfo();
-
- 
- 
- System.out.println("The total cost of this Computer is : " + this.getPrice()+"\n");
+	theProcessor.printInfo();
+	theHardDisk.printInfo();
+	theDisplay.printInfo();
+ 	System.out.println("The total cost of this Computer is : " + this.getPrice()+"\n");
 }
+
+
+public void setTotal (int t) {
+	total=t;
+	
+}
+
+
 }

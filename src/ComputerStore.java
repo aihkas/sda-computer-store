@@ -3,14 +3,21 @@ import java.util.ArrayList;
 import java.util.Iterator;
 
 
-public class ComputerStore {
+/**
+* ComputerStore class aims to store a collection of Computer objects in an array list to perform
+* some basic operation on a group of those objects.
+* @author  Aiham Alkaseer
+* @version 1.0
+* @since   2017-01-27 
+*/
 
-	
-	private ArrayList<Computer> computers;
-	
-	
+
+public class ComputerStore {
 	
 	
+private ArrayList<Computer> computers;
+	
+
 public ComputerStore () {
 	
 	computers = new ArrayList<Computer>();
