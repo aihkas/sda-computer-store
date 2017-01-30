@@ -4,8 +4,8 @@ public class HardDisk extends Component {
 
 	//private int cost;
 	//private String brand;
-	private String model;
-	private int itmNum;
+	//private String model;
+	//private int itmNum;
 	private int size;
 
 
@@ -13,10 +13,10 @@ public class HardDisk extends Component {
 		this.brand= brand;
 		this.cost=cost;
 		this.size=size;
-		
+
 	}
-	
-	
+
+
 	public int getSize() {
 		return size;
 	}
@@ -32,33 +32,8 @@ public class HardDisk extends Component {
 
 	public void getDescription() {
 
-		System.out.println(" The Hard Disk is a "+ brand +"   Cost: "+cost+" and the size is"+ size);
+		System.out.println(" The Hard Disk is a "+ brand +", Cost: "+cost+" and the size is (tb) "+ size);
 
-	}
-
-
-
-
-	public String getModel() {
-		return model;
-	}
-
-
-
-	public void setModel(String model) {
-		this.model = model;
-	}
-
-
-
-	public int getItmNum() {
-		return itmNum;
-	}
-
-
-
-	public void setItmNum(int itmNum) {
-		this.itmNum = itmNum;
 	}
 
 

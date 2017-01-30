@@ -23,9 +23,8 @@ public class Computer {
 	private Display theDisplay;
 	private int total;    //the total price of all components of the computer
 
-
 	HashMap<String, Component>  configuration;
-	
+
 
 
 	/**
@@ -67,35 +66,40 @@ public class Computer {
 
 	/**
 	 * print a summary of the Computer components and calculate a total cost.
-	 * it calls the local print methods for each object of the components
-	 * 
+	 * it calls the local print methods for each object of the components.
+	 * the method was updated to check if the computer has its custom set of components, and if
+	 * it does it will use an iterator object to go throw each key of the hash map then prints
+	 * the key and its value, to show at the end of execution a list of all components of the
+	 * computer.
+	 *
 	 */
 
 
+
+
 	public void printComputerSummary() {
-		if (configuration.isEmpty()){
-		System.out.println("This Computer has the following components : ");
-		theProcessor.getDescription();
-		theHardDisk.getDescription();
-		theDisplay.getDescription();
-		System.out.println("The total cost of this Computer is : " + this.getPrice()+"\n");
-	}
-	
-	else{
-		System.out.println("This computer is custom designed and incudes the following components: ") ;
-		Iterator it = configuration.entrySet().iterator();
-			    while (it.hasNext()) {
-			        HashMap.Entry pair = (HashMap.Entry)it.next();
-			        String key = (String)pair.getKey();
-			        Component value = (Component)pair.getValue();
-			        System.out.println(pair.getKey() + " : ") ;
-			        value.getDescription();
-			        it.remove(); // avoids a ConcurrentModificationException
-			    }
+		if (configuration.isEmpty()){			//Checking if this computer has a list of custom components
+			System.out.println("This Computer has the following components : ");
+			theProcessor.getDescription();
+			theHardDisk.getDescription();
+			theDisplay.getDescription();
+			System.out.println("The total cost of this Computer is : " + this.getPrice()+"\n");
+		}
+
+		else{
+			System.out.println("This computer is custom designed and includes the following components: ") ;
+			Iterator it = configuration.entrySet().iterator();
+			while (it.hasNext()) {
+				HashMap.Entry temp = (HashMap.Entry)it.next();  // temp is temporary reference to a map pair (key and value)
+				Component value = (Component)temp.getValue();   // setting the value to a temporary Component object
+				System.out.println(temp.getKey() + " : ") ;     // print the key which is a String by definition
+				value.getDescription();                         // calling the getDescription method on the component object that prints on screen the details of the component
+				it.remove();                                    // avoids a ConcurrentModificationException
 			}
+		}
 	}
 
-	
+
 	/**
 	 * @return the theProcessor
 	 */
@@ -131,10 +135,10 @@ public class Computer {
 
 	}
 
-	
+
 	public void addComponent (String s, Component c){
 		configuration.put(s, c);
-		
+
 	}
 
 }

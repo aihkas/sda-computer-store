@@ -1,26 +1,39 @@
 
+/**
+ * Component is the father class of computer parts sub-classes
+ * it stores the common data of all parts and defines a general method to get the
+ * description of each.
+ * @author Ayham
+ *
+ */
+
+
 public class Component {
 
 	protected String brand;
 	protected int cost;
 
 
-	
-	
-	
+
+
+
+	/**
+	 * This method prints the description of the component in case that the sub class
+	 * doesn't have its own.
+	 */
 	public void getDescription() {
 
 		System.out.println("Compenent's brand: "+ brand +" and its cost is "+cost);
-		
+
 	}
-	
-	
-	
-	
-	
-	
-	
-	
+
+
+
+
+
+
+
+
 	public int getCost () {
 
 		return cost;
@@ -32,7 +45,7 @@ public class Component {
 		this.cost= cost;
 
 	}
-	
+
 
 	public String getBrand() {
 		return brand;
@@ -45,6 +58,6 @@ public class Component {
 	}
 
 
-	
-	
+
+
 }

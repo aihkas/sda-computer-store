@@ -184,8 +184,15 @@ public class ComputerStore {
 		return highest;
 
 	}
+
+
 	
 	
+	/**
+	 * this method simply calls getCost methods for each of components array list
+	 * to calculate the sum of costs.	 *
+	 * @return int Cost of all components
+	 */
 	public int totalCostOfComponents( ){
 		int total=0;
 		for (Component temp : components){
@@ -193,23 +200,46 @@ public class ComputerStore {
 		}
 		return total;
 	}
-	
+
+
+	/**
+	 * this method goes through all elements in the components array list then it compares the
+	 * required type string with class name of the current element, and it adds its cost if 
+	 * it matches the condition.
+	 * and to achieve that the method tries to call toString method of the object then removes
+	 * the object id (which comes after the class name followed by "@" char, using that char 
+	 * as a point to get the the class name in a string.
+	 * @param component_type is String that should represent the name of one the parts classes
+	 * @return int the sum of all parts of that type of components
+	 */
 	
 	public int totalCostOfComponents(String component_type) {
 		int total=0;
 		int indexofat=0;
 		String toClassName;
-		
+
 		for (Component temp : components){
-			 indexofat = temp.toString().indexOf("@");
-			 toClassName=temp.toString().substring(0, indexofat);
-			if (toClassName.contentEquals(component_type) ) total+=temp.getCost();
+			
+			/*
+			 * getting the index of @ char: calling toString method on an object usually
+			 *  returns something similar to this: ClassName@13123133 where numbers
+			 *  after @ refer to the object id.
+			 */
+			
+			indexofat = temp.toString().indexOf("@");       
+			toClassName=temp.toString().substring(0, indexofat);                    //getting rid of the rest of the string
+			if (toClassName.contentEquals(component_type) ) total+=temp.getCost();  //comparing the if the required class should be added to the sum
 		}
 		return total;
-	
-	
+
+
 	}
-	
+
+	/**
+	 * used to add components to the components array list in the store
+	 * @param newComponent the object to be added
+	 * @return boolean on success
+	 */
 	public boolean addComponent(Component newComponent) { 
 
 		if (components.add(newComponent))
@@ -217,7 +247,7 @@ public class ComputerStore {
 		else return false;
 	}
 
-	
+
 }
 
 
