@@ -1,12 +1,12 @@
 
-public class Display {
+public class Display extends Component {
 
 
-	private int cost;
-	private String brand;
+	//private int cost;
+	//private String brand;
 	private String model;
 	private int itmNum;
-	private int Size;
+	private int size;
 
 
 
@@ -14,35 +14,33 @@ public class Display {
 
 
 	public int getSize() {
-		return Size;
+		return size;
 	}
 
 	public void setSize(int size) {
-		Size = size;
+		this.size = size;
 	}
 
-	public Display (){
+	
+	public Display (String brand, int cost, int size) {
+		this.brand= brand;
+		this.cost=cost;
+		this.size=size;
+		
+	}
+	
+public Display () {
+		
+		
+	}
+	
 
+	public void getDescription() {
+
+		System.out.println(" The display is a "+ brand + "   Cost: "+cost+" and the size is"+ size);
 
 	}
 
-	public void printInfo() {
-
-		System.out.println(" The display is a "+ brand + " "+ model + "   Item number: "+ itmNum+"   Cost: "+cost);
-
-	}
-
-
-
-	public String getBrand() {
-		return brand;
-	}
-
-
-
-	public void setBrand(String brand) {
-		this.brand = brand;
-	}
 
 
 
@@ -73,21 +71,11 @@ public class Display {
 
 
 
-	public int getCost () {
-
-		return cost;
-
-	}
-
-	public void setCost (int cost) {
-
-		this.cost= cost;
-
-	}
-
-
-
-
-
 }
+
+
+
+
+
+
 

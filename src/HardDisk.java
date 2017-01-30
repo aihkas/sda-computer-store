@@ -1,15 +1,22 @@
 
-public class HardDisk {
+public class HardDisk extends Component {
 
 
-	private int cost;
-	private String brand;
+	//private int cost;
+	//private String brand;
 	private String model;
 	private int itmNum;
 	private int size;
 
 
-
+	public HardDisk (String brand, int cost, int size) {
+		this.brand= brand;
+		this.cost=cost;
+		this.size=size;
+		
+	}
+	
+	
 	public int getSize() {
 		return size;
 	}
@@ -23,21 +30,12 @@ public class HardDisk {
 
 	}
 
-	public void printInfo() {
+	public void getDescription() {
 
-		System.out.println(" The Hard Disk is a "+ brand + " "+ model + "   Item number: "+ itmNum+"   Cost: "+cost);
+		System.out.println(" The Hard Disk is a "+ brand +"   Cost: "+cost+" and the size is"+ size);
 
 	}
 
-	public String getBrand() {
-		return brand;
-	}
-
-
-
-	public void setBrand(String brand) {
-		this.brand = brand;
-	}
 
 
 
@@ -67,15 +65,4 @@ public class HardDisk {
 
 
 
-	public int getCost () {
-
-		return cost;
-
-	}
-
-	public void setCost (int cost) {
-
-		this.cost= cost;
-
-	}
 }

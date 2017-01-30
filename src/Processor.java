@@ -1,9 +1,9 @@
 
-public class Processor {
+public class Processor extends Component {
 
 
-	private int cost;
-	private String brand;
+	//private int cost;
+	//private String brand;
 	private String model;
 	private int itmNum;
 	private int clock;
@@ -17,29 +17,27 @@ public class Processor {
 		this.clock = clock;
 	}
 
-	public Processor ()
+	
 
-	{
+	public Processor (String brand, int cost, int clock) {
+		this.brand= brand;
+		this.cost=cost;
+		this.clock=clock;
+		
+	}
+	
+	public Processor () {
+		
+		
+	}
 
+	public void getDescription() {
+
+		System.out.println(" The processor is a "+ brand +"  Cost: "+cost+" and the clock speed is"+ clock);
 
 	}
 
-	public void printInfo() {
 
-		System.out.println(" The processor is a "+ brand + " "+ model + "   Item number: "+ itmNum+"   Cost: "+cost);
-
-	}
-
-
-	public String getBrand() {
-		return brand;
-	}
-
-
-
-	public void setBrand(String brand) {
-		this.brand = brand;
-	}
 
 
 
@@ -68,18 +66,4 @@ public class Processor {
 
 
 
-
-
-
-	public int getCost () {
-
-		return cost;
-
-	}
-
-	public void setCost (int cost) {
-
-		this.cost= cost;
-
-	}
 }

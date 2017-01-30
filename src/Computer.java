@@ -1,5 +1,6 @@
 
 import java.lang.Math;      //needed for generating random integers while testing
+import java.util.HashMap;
 
 
 
@@ -19,11 +20,11 @@ public class Computer {
 	private Processor theProcessor;
 	private HardDisk theHardDisk;
 	private Display theDisplay;
-	private int total;          //the total price of all components of the computer
+	private int total;    //the total price of all components of the computer
 
 
-
-
+	HashMap<String, Component>  configuration;
+	
 
 
 	/**
@@ -34,7 +35,7 @@ public class Computer {
 
 	public Computer() {
 
-
+		configuration=new HashMap<String, Component>();
 		theProcessor = new Processor();
 		theHardDisk = new HardDisk();
 		theDisplay = new Display();
@@ -72,9 +73,9 @@ public class Computer {
 
 	public void printComputerSummary() {
 		System.out.println("This Computer has the following components : ");
-		theProcessor.printInfo();
-		theHardDisk.printInfo();
-		theDisplay.printInfo();
+		theProcessor.getDescription();
+		theHardDisk.getDescription();
+		theDisplay.getDescription();
 		System.out.println("The total cost of this Computer is : " + this.getPrice()+"\n");
 	}
 
@@ -84,5 +85,10 @@ public class Computer {
 
 	}
 
+	
+	public void addComponent (String s, Component c){
+		configuration.put(s, c);
+		
+	}
 
 }
