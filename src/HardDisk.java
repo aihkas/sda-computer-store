@@ -1,16 +1,16 @@
 
 public class HardDisk {
-	
-	
+
+
 	private int cost;
 	private String brand;
 	private String model;
 	private int itmNum;
 	private int size;
 
-	
 
-public int getSize() {
+
+	public int getSize() {
 		return size;
 	}
 
@@ -18,18 +18,18 @@ public int getSize() {
 		this.size = size;
 	}
 
-public HardDisk (){
-	
+	public HardDisk (){
 
-}
 
-	public void printInfo() {
-		
-System.out.println(" The Hard Disk is a "+ brand + " "+ model + "   Item number: "+ itmNum+"   Cost: "+cost);
-				
 	}
 
-public String getBrand() {
+	public void printInfo() {
+
+		System.out.println(" The Hard Disk is a "+ brand + " "+ model + "   Item number: "+ itmNum+"   Cost: "+cost);
+
+	}
+
+	public String getBrand() {
 		return brand;
 	}
 
@@ -67,15 +67,15 @@ public String getBrand() {
 
 
 
-public int getCost () {
-	
-	return cost;
-	
-}
+	public int getCost () {
 
-public void setCost (int cost) {
-	
-	this.cost= cost;
-		
-}
+		return cost;
+
+	}
+
+	public void setCost (int cost) {
+
+		this.cost= cost;
+
+	}
 }

@@ -1,14 +1,14 @@
 
 public class Processor {
-	
+
 
 	private int cost;
 	private String brand;
 	private String model;
 	private int itmNum;
 	private int clock;
-	
-	
+
+
 	public int getClock() {
 		return clock;
 	}
@@ -20,18 +20,18 @@ public class Processor {
 	public Processor ()
 
 	{
-		
+
 
 	}
 
 	public void printInfo() {
-		
-   System.out.println(" The processor is a "+ brand + " "+ model + "   Item number: "+ itmNum+"   Cost: "+cost);
-				
-	}
-	
 
-public String getBrand() {
+		System.out.println(" The processor is a "+ brand + " "+ model + "   Item number: "+ itmNum+"   Cost: "+cost);
+
+	}
+
+
+	public String getBrand() {
 		return brand;
 	}
 
@@ -71,15 +71,15 @@ public String getBrand() {
 
 
 
-public int getCost () {
-	
-	return cost;
-	
-}
+	public int getCost () {
 
-public void setCost (int cost) {
-	
-	this.cost= cost;
-		
-}
+		return cost;
+
+	}
+
+	public void setCost (int cost) {
+
+		this.cost= cost;
+
+	}
 }

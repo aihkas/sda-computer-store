@@ -1,19 +1,19 @@
 
 public class Display {
-	
-	
+
+
 	private int cost;
 	private String brand;
 	private String model;
 	private int itmNum;
 	private int Size;
 
-	
-	
-	
-	
 
-public int getSize() {
+
+
+
+
+	public int getSize() {
 		return Size;
 	}
 
@@ -21,20 +21,20 @@ public int getSize() {
 		Size = size;
 	}
 
-public Display (){
-	
+	public Display (){
 
-}
+
+	}
 
 	public void printInfo() {
-		
-   System.out.println(" The display is a "+ brand + " "+ model + "   Item number: "+ itmNum+"   Cost: "+cost);
-		
-	}
-	
-	
 
-public String getBrand() {
+		System.out.println(" The display is a "+ brand + " "+ model + "   Item number: "+ itmNum+"   Cost: "+cost);
+
+	}
+
+
+
+	public String getBrand() {
 		return brand;
 	}
 
@@ -73,17 +73,17 @@ public String getBrand() {
 
 
 
-public int getCost () {
-	
-	return cost;
-	
-}
+	public int getCost () {
 
-public void setCost (int cost) {
-	
-	this.cost= cost;
-		
-}
+		return cost;
+
+	}
+
+	public void setCost (int cost) {
+
+		this.cost= cost;
+
+	}
 
 
 
