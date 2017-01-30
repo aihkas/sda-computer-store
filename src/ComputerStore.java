@@ -16,11 +16,13 @@ public class ComputerStore {
 
 
 	private ArrayList<Computer> computers;
+	private ArrayList<Component>  components;
 
 
 	public ComputerStore () {
 
 		computers = new ArrayList<Computer>();
+		components = new ArrayList<Component>();
 
 	}
 
@@ -182,6 +184,40 @@ public class ComputerStore {
 		return highest;
 
 	}
+	
+	
+	public int totalCostOfComponents( ){
+		int total=0;
+		for (Component temp : components){
+			total+=temp.getCost();
+		}
+		return total;
+	}
+	
+	
+	public int totalCostOfComponents(String component_type) {
+		int total=0;
+		int indexofat=0;
+		String toClassName;
+		
+		for (Component temp : components){
+			 indexofat = temp.toString().indexOf("@");
+			 toClassName=temp.toString().substring(0, indexofat);
+			if (toClassName.contentEquals(component_type) ) total+=temp.getCost();
+		}
+		return total;
+	
+	
+	}
+	
+	public boolean addComponent(Component newComponent) { 
+
+		if (components.add(newComponent))
+			return true;
+		else return false;
+	}
+
+	
 }
 
 

@@ -42,15 +42,30 @@ public class Main {
 		Computer myPC = new Computer( );
 
 		// Add a hard disk
-		Component hdd1 = new HardDisk(“Seagate”, 150, 2);
-		myPC.addComponent(“hard disk 1”, hdd1);
+		Component hdd1 = new HardDisk("Seagate", 150, 2);
+		myPC.addComponent("hard disk 1", hdd1);
 
 		// Add a second hard disk
-		Component hdd2 = new HardDisk(“Seagate”, 150, 2);
-		myPC.addComponent(“hard disk 2”, hdd2);
+		Component hdd2 = new HardDisk("Seagate", 150, 2);
+		myPC.addComponent("hard disk 2", hdd2);
 
-
-
+		storeTest.addComponent(test.getTheProcessor());
+		System.out.println("process1: "+test.getTheProcessor().cost);
+		storeTest.addComponent(test1.getTheProcessor());
+		System.out.println("process2: "+test1.getTheProcessor().cost);
+	//	storeTest.addComponent(test2.getTheProcessor());
+		storeTest.addComponent(test.getTheHardDisk());
+		System.out.println("Hard1: "+test.getTheHardDisk().cost);
+		storeTest.addComponent(test1.getTheHardDisk());
+		System.out.println("Hard2: "+test1.getTheHardDisk().cost);
+		storeTest.addComponent(test2.getTheHardDisk());
+		System.out.println("Hard3: "+test2.getTheHardDisk().cost);
+	//	storeTest.addComponent(test3.getTheHardDisk());
+		
+		System.out.println("Total cost of components is: "+storeTest.totalCostOfComponents());
+		System.out.println("Total cost of Hard Disks is : "+storeTest.totalCostOfComponents("HardDisk"));
+		System.out.println("Total cost of Processors is : "+storeTest.totalCostOfComponents("Processor"));
+		myPC.printComputerSummary();
 	}
 
 	

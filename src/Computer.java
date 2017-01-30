@@ -1,5 +1,6 @@
 
 import java.lang.Math;      //needed for generating random integers while testing
+import java.util.Iterator;
 import java.util.HashMap;
 
 
@@ -72,12 +73,57 @@ public class Computer {
 
 
 	public void printComputerSummary() {
+		if (configuration.isEmpty()){
 		System.out.println("This Computer has the following components : ");
 		theProcessor.getDescription();
 		theHardDisk.getDescription();
 		theDisplay.getDescription();
 		System.out.println("The total cost of this Computer is : " + this.getPrice()+"\n");
 	}
+	
+	else{
+		System.out.println("This computer is custom designed and incudes the following components: ") ;
+		Iterator it = configuration.entrySet().iterator();
+			    while (it.hasNext()) {
+			        HashMap.Entry pair = (HashMap.Entry)it.next();
+			        String key = (String)pair.getKey();
+			        Component value = (Component)pair.getValue();
+			        System.out.println(pair.getKey() + " : ") ;
+			        value.getDescription();
+			        it.remove(); // avoids a ConcurrentModificationException
+			    }
+			}
+	}
+
+	
+	/**
+	 * @return the theProcessor
+	 */
+	public Processor getTheProcessor() {
+		return theProcessor;
+	}
+
+
+
+
+	/**
+	 * @return the theHardDisk
+	 */
+	public HardDisk getTheHardDisk() {
+		return theHardDisk;
+	}
+
+
+
+
+	/**
+	 * @return the theDisplay
+	 */
+	public Display getTheDisplay() {
+		return theDisplay;
+	}
+
+
 
 
 	public void setTotal (int t) {
