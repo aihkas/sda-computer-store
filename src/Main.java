@@ -15,7 +15,7 @@ public class Main {
 
 
 
-	public static void main (String args[]){
+	public static void main (String args[]) throws InstantiationException, IllegalAccessException{
 
 
 		Computer test= new Computer();
@@ -77,6 +77,8 @@ public class Main {
 		System.out.println("Total cost of Hard Disks is : "+storeTest.totalCostOfComponents("HardDisk"));
 		System.out.println("Total cost of Processors is : "+storeTest.totalCostOfComponents("Processor"));
 		
+		System.out.println("V2Total cost of Hard Disks is : "+storeTest.totalCostOfComponentsv2("HardDisk"));
+		System.out.println("V2Total cost of Processors is : "+storeTest.totalCostOfComponentsv2("Processor"));
 		
 		/*
 		 * printing  summary for a computer that 
@@ -84,6 +86,10 @@ public class Main {
 		 */
 		
 		myPC.printComputerSummary(); 
+		
+	
+		
+		 
 		}
 
 

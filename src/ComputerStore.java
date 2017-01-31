@@ -186,8 +186,8 @@ public class ComputerStore {
 	}
 
 
-	
-	
+
+
 	/**
 	 * this method simply calls getCost methods for each of components array list
 	 * to calculate the sum of costs.	 *
@@ -212,28 +212,78 @@ public class ComputerStore {
 	 * @param component_type is String that should represent the name of one the parts classes
 	 * @return int the sum of all parts of that type of components
 	 */
-	
+
 	public int totalCostOfComponents(String component_type) {
 		int total=0;
 		int indexofat=0;
 		String toClassName;
 
 		for (Component temp : components){
-			
+
 			/*
 			 * getting the index of @ char: calling toString method on an object usually
 			 *  returns something similar to this: ClassName@13123133 where numbers
 			 *  after @ refer to the object id.
 			 */
-			
+
 			indexofat = temp.toString().indexOf("@");       
 			toClassName=temp.toString().substring(0, indexofat);                    //getting rid of the rest of the string
+			//there was a simpler method using getClass
+			//String toClassName = temp.getClass().getSimpleName(); //getName() or getTypeName() worked too
 			if (toClassName.contentEquals(component_type) ) total+=temp.getCost();  //comparing the if the required class should be added to the sum
 		}
 		return total;
 
 
 	}
+
+
+
+	/**
+	 * This is a different approach to solve the previous problem
+	 * it uses forName method to get the type of required class using the string parameter
+	 * then it goes through the array list and checks if each object is an instance of required type
+	 * using the isInstance method.
+	 * @param component_type is String that should represent the name of one the parts classes
+	 * @return int the sum of all parts of that type of components
+	 * @throws IllegalAccessException 
+	 * @throws InstantiationException 
+	 */
+
+	public int totalCostOfComponentsv2(String component_type) throws InstantiationException, IllegalAccessException {
+		int total=0;
+	
+		try{
+			
+			Class<?> type = Class.forName(component_type); 
+			Object o= type.newInstance();
+			
+			   //creating an object of the required class type to use it in our comparison
+			for (Component temp : components){				  
+				if  (temp.getClass().isInstance(o)) {	  //getClass returns the the class type of temp then isinstance compares it with the object type
+					total+=temp.getCost();
+
+				}
+				System.out.println(type.toString() +type.getClass().getTypeName()+" "+temp.getClass().getTypeName());
+				
+			}
+
+
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+
+
+		}
+		
+		return total;
+	}
+
+	
+	
+	
+		
+	
 
 	/**
 	 * used to add components to the components array list in the store

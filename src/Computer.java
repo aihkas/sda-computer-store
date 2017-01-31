@@ -68,7 +68,7 @@ public class Computer {
 	 * print a summary of the Computer components and calculate a total cost.
 	 * it calls the local print methods for each object of the components.
 	 * the method was updated to check if the computer has its custom set of components, and if
-	 * it does it will use an iterator object to go throw each key of the hash map then prints
+	 * it does it will use an iterator object to go through each key of the hash map then prints
 	 * the key and its value, to show at the end of execution a list of all components of the
 	 * computer.
 	 *
@@ -136,9 +136,29 @@ public class Computer {
 	}
 
 
+	/**
+	 * adding a component to the hash map of a custom built pc
+	 * @param s the string is the key in the hash map and it should describe the component
+	 * @param c the object of component or its sub-calsees to be added
+	 */
 	public void addComponent (String s, Component c){
 		configuration.put(s, c);
 
 	}
-
+	
+	
+	
+/**
+ * deletes a <k,v> pair of the hash map
+ * @param name the key of component to be deleted
+ * 
+ */
+public void removeComponent(String name){
+		
+			configuration.remove(name);			
+		}
 }
+	
+	
+	
+
