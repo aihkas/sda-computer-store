@@ -36,9 +36,10 @@ public class ComputerStore {
 	 */
 	public boolean addComputer(Computer newComputer) { 
 
-		if (computers.add(newComputer))
-			return true;
-		else return false;
+		return (computers.add(newComputer));
+		
+		
+		
 	}
 
 
@@ -252,20 +253,18 @@ public class ComputerStore {
 
 	public int totalCostOfComponentsv2(String component_type) throws InstantiationException, IllegalAccessException {
 		int total=0;
-	
+
 		try{
-			
+
 			Class<?> type = Class.forName(component_type); 
-			Object o= type.newInstance();
-			
-			   //creating an object of the required class type to use it in our comparison
+			Object o= type.newInstance();	               //creating an object of the required class type to use it in our comparison
+
 			for (Component temp : components){				  
-				if  (temp.getClass().isInstance(o)) {	  //getClass returns the the class type of temp then isinstance compares it with the object type
+				if  (temp.getClass().isInstance(o)) {	   //getClass returns the the class type of temp then isinstance compares it with the object type
 					total+=temp.getCost();
 
 				}
-				System.out.println(type.toString() +type.getClass().getTypeName()+" "+temp.getClass().getTypeName());
-				
+
 			}
 
 
@@ -275,15 +274,15 @@ public class ComputerStore {
 
 
 		}
-		
+
 		return total;
 	}
 
-	
-	
-	
-		
-	
+
+
+
+
+
 
 	/**
 	 * used to add components to the components array list in the store

@@ -145,20 +145,20 @@ public class Computer {
 		configuration.put(s, c);
 
 	}
-	
-	
-	
-/**
- * deletes a <k,v> pair of the hash map
- * @param name the key of component to be deleted
- * 
- */
-public void removeComponent(String name){
-		
-			configuration.remove(name);			
-		}
+
+
+
+	/**
+	 * deletes a <k,v> pair of the hash map
+	 * @param name the key of component to be deleted
+	 * 
+	 */
+	public void removeComponent(String name){
+
+		configuration.remove(name);			
+	}
 }
-	
-	
-	
+
+
+
 
