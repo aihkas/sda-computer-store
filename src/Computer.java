@@ -33,7 +33,7 @@ public class Computer {
 	 *for testing purposes it will give a random integer between 1-100 for each one of the components
 	 */
 
-	public Computer() {
+	public  Computer() {
 
 		configuration=new HashMap<String, Component>();
 		theProcessor = new Processor();

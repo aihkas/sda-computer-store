@@ -16,14 +16,14 @@ public class ComputerStore {
 
 
 	private ArrayList<Computer> computers;
-	private ArrayList<Component>  components;
+	ArrayList<Component>  components;
 
 
 	public ComputerStore () {
 
 		computers = new ArrayList<Computer>();
 		components = new ArrayList<Component>();
-
+                
 	}
 
 
