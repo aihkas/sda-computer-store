@@ -13,7 +13,7 @@ The following requirements must be implemented in Java:
 ```java
 private Processor theProcessor
 private HardDisk theHardDisk
-private Memory theDisplay
+private Display theDisplay
 ```
 
 1 constructor:
