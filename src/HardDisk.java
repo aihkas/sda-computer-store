@@ -30,10 +30,10 @@ public class HardDisk extends Component {
 
 	}
 
-	public void getDescription() {
-
-		System.out.println(" The Hard Disk is a "+ brand +", Cost: "+cost+" and the size is (tb) "+ size);
-
+	public String getDescription() {
+String s="";
+		s=s.concat(" The Hard Disk is a "+ brand +", Cost: "+cost+" and the size is (tb) "+ size);
+return s;
 	}
 
 

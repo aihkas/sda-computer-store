@@ -39,15 +39,28 @@ public class Computer {
 		theProcessor = new Processor();
 		theHardDisk = new HardDisk();
 		theDisplay = new Display();
-
+                theProcessor.setBrand("intel");
+                theHardDisk.setBrand("WD");
+theDisplay.setBrand("sony");
 		theProcessor.setCost((int) Math.floor(Math.random() * 101));
 		theHardDisk.setCost((int) Math.floor(Math.random() * 101));
 		theDisplay.setCost((int) Math.floor(Math.random() * 101));
+                theProcessor.setClock((int) Math.floor(Math.random() * 101));
+		theHardDisk.setSize((int) Math.floor(Math.random() * 101));
+		theDisplay.setSize((int) Math.floor(Math.random() * 101));
 
 		total=getPrice();
 
 
 	}
+        
+        public Computer (HardDisk h,Display d,Processor p){
+            
+            theHardDisk=h;
+            theDisplay=d;
+            theProcessor=p;
+            
+        }
 
 
 
@@ -77,26 +90,27 @@ public class Computer {
 
 
 
-	public void printComputerSummary() {
-		if (configuration.isEmpty()){			//Checking if this computer has a list of custom components
-			System.out.println("This Computer has the following components : ");
-			theProcessor.getDescription();
-			theHardDisk.getDescription();
-			theDisplay.getDescription();
-			System.out.println("The total cost of this Computer is : " + this.getPrice()+"\n");
-		}
+	public String printComputerSummary() {
+		String s="";			//Checking if this computer has a list of custom components
+			s=s=s.concat("This Computer has the following components : ");
+			s=s=s.concat(theProcessor.getDescription());
+			s=s.concat(theHardDisk.getDescription());
+			s=s.concat(theDisplay.getDescription());
+			s=s.concat("The total cost of this Computer is : " + this.getPrice()+"\n");
+		
 
-		else{
-			System.out.println("This computer is custom designed and includes the following components: ") ;
+		if (!configuration.isEmpty()){
+			s=s.concat("This computer is custom designed and includes the following components: ") ;
 			Iterator it = configuration.entrySet().iterator();
 			while (it.hasNext()) {
 				HashMap.Entry temp = (HashMap.Entry)it.next();  // temp is temporary reference to a map pair (key and value)
 				Component value = (Component)temp.getValue();   // setting the value to a temporary Component object
-				System.out.println(temp.getKey() + " : ") ;     // print the key which is a String by definition
-				value.getDescription();                         // calling the getDescription method on the component object that prints on screen the details of the component
+				s=s.concat(temp.getKey() + " : ") ;     // print the key which is a String by definition
+				s=s.concat(value.getDescription());                         // calling the getDescription method on the component object that prints on screen the details of the component
 				it.remove();                                    // avoids a ConcurrentModificationException
 			}
 		}
+                return s;
 	}
 
 
@@ -142,6 +156,7 @@ public class Computer {
 	 * @param c the object of component or its sub-calsees to be added
 	 */
 	public void addComponent (String s, Component c){
+            
 		configuration.put(s, c);
 
 	}

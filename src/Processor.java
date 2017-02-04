@@ -31,10 +31,10 @@ public class Processor extends Component {
 
 	}
 
-	public void getDescription() {
-
-		System.out.println(" The processor is a "+ brand +", Cost: "+cost+" and the clock speed is "+ clock);
-
+	public String getDescription() {
+String s="";
+		s=s.concat(" The processor is an "+ brand +", Cost: "+cost+" and the clock speed is "+ clock);
+return s;
 	}
 
 

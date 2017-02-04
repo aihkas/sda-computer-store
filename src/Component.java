@@ -21,10 +21,10 @@ public class Component {
 	 * This method prints the description of the component in case that the sub class
 	 * doesn't have its own.
 	 */
-	public void getDescription() {
-
-		System.out.println("Compenent's brand: "+ brand +" and its cost is "+cost);
-
+	public String getDescription() {
+String s="";
+		s=s.concat("Compenent's brand: "+ brand +" and its cost is "+cost);
+return s;
 	}
 
 

@@ -35,10 +35,10 @@ public class Display extends Component {
 	}
 
 
-	public void getDescription() {
-
-		System.out.println(" The display is a "+ brand + " Cost: "+cost+" and the size is (inches) "+ size);
-
+	public String getDescription() {
+String s="";
+		s=s.concat(" The display is a "+ brand + " Cost: "+cost+" and the size is (inches) "+ size);
+return s;
 	}
 
 

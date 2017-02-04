@@ -15,7 +15,7 @@ import java.util.Iterator;
 public class ComputerStore {
 
 
-	private ArrayList<Computer> computers;
+	ArrayList<Computer> computers;
 	ArrayList<Component>  components;
 
 
