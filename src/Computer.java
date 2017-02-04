@@ -23,7 +23,7 @@ public class Computer {
 	private Display theDisplay;
 	private int total;    //the total price of all components of the computer
 
-	HashMap<String, Component>  configuration;
+	HashMap<String, Component>  configuration=new HashMap<>();
 
 
 
@@ -41,7 +41,7 @@ public class Computer {
 		theDisplay = new Display();
                 theProcessor.setBrand("intel");
                 theHardDisk.setBrand("WD");
-theDisplay.setBrand("sony");
+                theDisplay.setBrand("sony");
 		theProcessor.setCost((int) Math.floor(Math.random() * 101));
 		theHardDisk.setCost((int) Math.floor(Math.random() * 101));
 		theDisplay.setCost((int) Math.floor(Math.random() * 101));
@@ -59,6 +59,8 @@ theDisplay.setBrand("sony");
             theHardDisk=h;
             theDisplay=d;
             theProcessor=p;
+           
+          
             
         }
 
@@ -156,8 +158,8 @@ theDisplay.setBrand("sony");
 	 * @param c the object of component or its sub-calsees to be added
 	 */
 	public void addComponent (String s, Component c){
-            
-		configuration.put(s, c);
+          
+        configuration.put(s, c);
 
 	}
 

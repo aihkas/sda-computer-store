@@ -415,6 +415,11 @@ public class NewJFrame extends javax.swing.JFrame {
         jLabel12.setText("Component:");
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(listcomp));
+        jComboBox1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBox1ActionPerformed(evt);
+            }
+        });
 
         jLabel14.setText("Computer to edit:");
 
@@ -507,12 +512,14 @@ public class NewJFrame extends javax.swing.JFrame {
         Computer c=new Computer(h,d,p);
         
         storeTest.computers.add(c) ;       // TODO add your handling code here:
-        jLabel13.setText("a Computer with total prce of "+storeTest.computers.get(storeTest.computers.size()-1).getPrice()+" $ was added" );
+        jLabel13.setText("a Computer with total price of "+storeTest.computers.get(storeTest.computers.size()-1).getPrice()+" $ was added" );
         fill();
         jList2.setModel (new javax.swing.AbstractListModel<String>() {
             public int getSize() { return listcomp.length; }
             public String getElementAt(int i) { return listcomp[i]; }
         });
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(listcomp));
+
     }//GEN-LAST:event_jButton3ActionPerformed
     
     private void jComboBox2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox2ActionPerformed
@@ -606,12 +613,21 @@ public class NewJFrame extends javax.swing.JFrame {
             public int getSize() { return listall.length; }
             public String getElementAt(int i) { return listall[i]; }
         });
+        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(listhards));
+        jComboBox6.setModel(new javax.swing.DefaultComboBoxModel<>(listdisplay));
+        jComboBox7.setModel(new javax.swing.DefaultComboBoxModel<>(listprocess));
+        jComboBox5.setModel(new javax.swing.DefaultComboBoxModel<>(listall));
+
         
     }//GEN-LAST:event_jButton1ActionPerformed
     
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         jLabel18.setText("<html>"+storeTest.computers.get(jList2.getSelectedIndex()).printComputerSummary()+"</html>");        // TODO add your handling code here:
     }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jComboBox1ActionPerformed
     
     /**
      * @param args the command line arguments
