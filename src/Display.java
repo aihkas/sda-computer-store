@@ -37,7 +37,7 @@ public class Display extends Component {
 
 	public String getDescription() {
 String s="";
-		s=s.concat(" The display is a "+ brand + " Cost: "+cost+" and the size is (inches) "+ size);
+		s=s.concat(" display: "+ brand + " $"+cost+" , size (inches) "+ size+"\n");
 return s;
 	}
 

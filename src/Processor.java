@@ -30,12 +30,12 @@ public class Processor extends Component {
 
 
 	}
-
-	public String getDescription() {
-String s="";
-		s=s.concat(" The processor is an "+ brand +", Cost: "+cost+" and the clock speed is "+ clock);
-return s;
-	}
+        
+        public String getDescription() {
+            String s="";
+            s=s.concat("processor: "+ brand +" $"+cost+", clock speed"+ clock+"\n");
+            return s;
+        }
 
 
 

@@ -94,21 +94,21 @@ public class Computer {
 
 	public String printComputerSummary() {
 		String s="";			//Checking if this computer has a list of custom components
-			s=s=s.concat("This Computer has the following components : ");
-			s=s=s.concat(theProcessor.getDescription());
+			s=s.concat("Main components of the computer: ");
+			s=s.concat(theProcessor.getDescription());
 			s=s.concat(theHardDisk.getDescription());
 			s=s.concat(theDisplay.getDescription());
-			s=s.concat("The total cost of this Computer is : " + this.getPrice()+"\n");
+			//s=s.concat("The total cost of this Computer is : " + this.getPrice()+"\n");
 		
 
 		if (!configuration.isEmpty()){
-			s=s.concat("This computer is custom designed and includes the following components: ") ;
+			s=s.concat("This computer has a customized configuration that includes: ") ;
 			Iterator it = configuration.entrySet().iterator();
 			while (it.hasNext()) {
 				HashMap.Entry temp = (HashMap.Entry)it.next();  // temp is temporary reference to a map pair (key and value)
 				Component value = (Component)temp.getValue();   // setting the value to a temporary Component object
-				s=s.concat(temp.getKey() + " : ") ;     // print the key which is a String by definition
-				s=s.concat(value.getDescription());                         // calling the getDescription method on the component object that prints on screen the details of the component
+				s=s.concat(temp.getKey() + " : ") ;             // print the key which is a String by definition
+				s=s.concat(value.getDescription());             // calling the getDescription method on the component object that prints on screen the details of the component
 				it.remove();                                    // avoids a ConcurrentModificationException
 			}
 		}

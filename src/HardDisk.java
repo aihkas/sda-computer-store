@@ -32,7 +32,7 @@ public class HardDisk extends Component {
 
 	public String getDescription() {
 String s="";
-		s=s.concat(" The Hard Disk is a "+ brand +", Cost: "+cost+" and the size is (tb) "+ size);
+		s=s.concat("Hard Disk: "+ brand +" $"+cost+" , size (tb) "+ size+"\n");
 return s;
 	}
 
